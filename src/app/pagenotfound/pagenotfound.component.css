@@ -1,0 +1,16 @@
+.foreofore{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-content: center; */
+    /* background-color: aliceblue; */
+    height: 100%;
+}
+h1{
+    font-size: 100px;
+    color: aqua;
+    text-align: center;
+    /* background-color: black; */
+    
+    
+}

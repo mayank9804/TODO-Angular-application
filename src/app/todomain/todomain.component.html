@@ -1,0 +1,19 @@
+<!-- <button [@trig]='state' class="btn btn-primary" (click)='toggleState();'>Button</button> -->
+
+
+<div class="panel" [@focusPanel]='state'>
+    <input #addTaskInput type="text" class="todo-bar" placeholder="Wanna do something.." (focus)='toggleFocus()'
+    on-focusout='toggleFocus()' (keyup.enter)='submitItem($event)'>
+    <p class="sub-text" [@note]='state'>Hit enter to add</p>
+    <p *ngIf='editMode' class="edit-banner">Edit your task named {{editIndex}} <a style="color:aqua;" (click)='canceledEdit()'>X</a></p>
+</div>
+<div class="task-box" *ngIf = "todoTasks && todoTasks.length">
+    <div class="item-container" *ngFor="let task of todoTasks;let i of index;"  [@onItemEnter]='in'>
+        <div class="identifier">
+            <p>{{task}}</p>
+            <a (click)='editMe(i)'>Edit</a>
+            <a (click)='deleteMe(i)'>X</a>
+        </div>
+    </div>
+</div>
+
